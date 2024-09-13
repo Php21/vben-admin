@@ -1,21 +1,21 @@
 <template>
-  <div ref="chartRef" :style="{ height, width }"></div>
+  <div ref="chartRef" style="height:300px;  width:300px; "></div>
 </template>
 <script lang="ts" setup>
   import { PropType, ref, Ref, onMounted } from 'vue';
   import { useECharts } from '@/hooks/web/useECharts';
   import { getLineData } from './data';
 
-  defineProps({
-    width: {
-      type: String as PropType<string>,
-      default: '100%',
-    },
-    height: {
-      type: String as PropType<string>,
-      default: 'calc(100vh - 78px)',
-    },
-  });
+  // defineProps({
+    // width: {
+      // type: String as PropType<string>,
+      // default: '100%',
+    // },
+    // height: {
+      // type: String as PropType<string>,
+      // default: 'calc(100vh - 78px)',
+    // },
+  // });
 
   const chartRef = ref<HTMLDivElement | null>(null);
   const { setOptions, echarts } = useECharts(chartRef as Ref<HTMLDivElement>);
@@ -66,19 +66,19 @@
           symbolSize: 15,
           data: lineData,
         },
-        {
-          name: 'bar',
-          type: 'bar',
-          barWidth: 10,
-          itemStyle: {
-            borderRadius: 5,
-            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              { offset: 0, color: '#14c8d4' },
-              { offset: 1, color: '#43eec6' },
-            ]),
-          },
-          data: barData,
-        },
+        // {
+          // name: 'bar',
+          // type: 'bar',
+          // barWidth: 10,
+          // itemStyle: {
+            // borderRadius: 5,
+            // color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              // { offset: 0, color: '#14c8d4' },
+              // { offset: 1, color: '#43eec6' },
+            // ]),
+          // },
+          // data: barData,
+        // },
         {
           name: 'line',
           type: 'bar',

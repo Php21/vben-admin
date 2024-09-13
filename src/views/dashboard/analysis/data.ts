@@ -6,6 +6,10 @@ export interface GrowCardItem {
   // color: string;
   // action: string;
 }
+export interface SchemasItem{
+  label: string;
+  value: number;
+}
 
 export const growCardList: GrowCardItem[] = [
   {
@@ -16,36 +20,47 @@ export const growCardList: GrowCardItem[] = [
     // color: 'green',
     // action: '月',
   },
-  {
-    title: '外部收入产品TOP3',
-    icon: 'total-sales|svg',
-    value: 20000,
+  // {
+    // title: '外部收入产品TOP3',
+    // icon: 'total-sales|svg',
+    // value: 20000,
     // total: 500000,
     // color: 'blue',
     // action: '月',
-  },
-  {
-    title: 'xx产品收入TOP3单位',
-    icon: 'download-count|svg',
-    value: 8000,
+  // },
+  // {
+    // title: 'xx产品收入TOP3单位',
+    // icon: 'download-count|svg',
+    // value: 8000,
     // total: 120000,
     // color: 'orange',
     // action: '周',
-  },
-  {
-    title: 'xx产品收入TOP3单位',
-    icon: 'transaction|svg',
-    value: 5000,
+  // },
+  // {
+    // title: 'xx产品收入TOP3单位',
+    // icon: 'transaction|svg',
+    // value: 5000,
     // total: 50000,
     // color: 'purple',
     // action: '年',
-  },
-  {
-    title: 'xx产品收入TOP3单位',
-    icon: 'transaction|svg',
-    value: 5000,
+  // },
+  // {
+    // title: 'xx产品收入TOP3单位',
+    // icon: 'transaction|svg',
+    // value: 5000,
     // total: 50000,
     // color: 'purple',
     // action: '年',
-  },
+  // },
 ];
+
+
+
+
+
+
+
+
+
+
+

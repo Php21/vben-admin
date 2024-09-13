@@ -5,7 +5,7 @@ import { t } from '@/hooks/web/useI18n';
 
 const dashboard: AppRouteModule = {
   path: '/dashboard',
-  name: 'Dashboard',
+  name: '收入管理',
   component: LAYOUT,
   redirect: '/dashboard/analysis',
   meta: {
@@ -29,6 +29,14 @@ const dashboard: AppRouteModule = {
       component: () => import('@/views/dashboard/workbench/index.vue'),
       meta: {
         title: t('routes.dashboard.workbench'),
+      },
+    },
+    {
+      path: 'finshdown',
+      name: 'finshdown',
+      component: () => import('@/views/dashboard/finshdown/index.vue'),
+      meta: {
+        title: t('routes.dashboard.finshdown'),
       },
     },
   ],

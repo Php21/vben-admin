@@ -74,14 +74,6 @@ const chartTabs: TabOption[] = [
       <template #visits>
         <AnalyticsVisits />
       </template>
-      <form>
-        <tr>
-          <tb></tb>
-          <tb></tb>
-          <tb></tb>
-        </tr>
-      </form>
-      
     </AnalysisChartsTabs>
 
     <!-- <div class="mt-5 w-full md:flex"> -->
