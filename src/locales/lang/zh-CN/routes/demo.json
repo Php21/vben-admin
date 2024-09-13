@@ -1,4 +1,9 @@
 {
+  "income": {
+    "income": "收入管理",
+    "import": "数据导入",
+    "total": "全院收入对标"
+  },
   "charts": {
     "baiduMap": "百度地图",
     "aMap": "高德地图",
