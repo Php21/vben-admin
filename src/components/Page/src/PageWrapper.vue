@@ -5,7 +5,6 @@
       :title="title"
       v-bind="omit($attrs, 'class')"
       :style="getHeaderStyle"
-      class="px-6 py-1"
       ref="headerRef"
       v-if="getShowHeader"
     >
