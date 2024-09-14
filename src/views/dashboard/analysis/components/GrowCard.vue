@@ -1,6 +1,7 @@
 <template>
   <div class="md:flex">
     <template v-for="(item, index) in growCardList" :key="item.title">
+      <!--卡片，根据值的长度来显示卡片-->
       <Card
         size="small"
         :loading="loading"
@@ -8,6 +9,12 @@
         class="md:w-1/4 w-full !md:mt-0"
         :class="{ '!md:mr-4': index + 1 < 4, '!mt-4': index > 0 }"
       >
+      <!-- <BasicForm -->
+        <!-- ref="formRef"  -->
+        <!-- :schemas="schemas" -->
+        <!-- :labelCol="{ span: 4 }" -->
+        <!-- :wrapperCol="{ span: 20 }" -->
+      <!-- /> -->
         <template #extra>
           <Tag :color="item.color">{{ item.action }}</Tag>
         </template>
@@ -18,8 +25,8 @@
         </div>
 
         <div class="p-2 px-4 flex justify-between">
-          <span>总{{ item.title }}</span>
-          <CountTo prefix="$" :startVal="1" :endVal="item.total" />
+          <span>{{ item.title }}</span>
+          <!-- <CountTo prefix="$" :startVal="1" :endVal="item.total" /> -->
         </div>
       </Card>
     </template>
@@ -30,10 +37,11 @@
   import Icon from '@/components/Icon/Icon.vue';
   import { Tag, Card } from 'ant-design-vue';
   import { growCardList } from '../data';
-
+  
   defineProps({
     loading: {
       type: Boolean,
     },
   });
+  
 </script>

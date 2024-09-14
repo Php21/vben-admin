@@ -1,6 +1,7 @@
 import { resultSuccess, resultError, getRequestToken, requestParams } from '../_util';
 import { MockMethod } from 'vite-plugin-mock';
 import { createFakeUserList } from './user';
+import { component } from 'vxe-pc-ui';
 
 // single
 const dashboardRoute = {
@@ -38,6 +39,18 @@ const dashboardRoute = {
         icon: 'bx:bx-home',
       },
     },
+    {
+      path: 'finshdown',
+      name: 'finshdown',
+      component: '/dashboard/finshdown/index',
+      meta: {
+        hideMenu: true,
+        hideBreadcrumb: true,
+        title: 'routes.dashboard.finshdown',
+        currentActiveMenu: '/dashboard',
+        icon: 'bx:bx-home',
+      },
+    }
   ],
 };
 
