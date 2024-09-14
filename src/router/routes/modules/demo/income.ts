@@ -30,6 +30,22 @@ const income: AppRouteModule = {
       },
       component: () => import('@/views/demo/income/total/index.vue'),
     },
+    {
+      path: 'external',
+      name: 'External',
+      meta: {
+        title: t('routes.demo.income.external'),
+      },
+      component: () => import('@/views/demo/income/external/index.vue'),
+    },
+    {
+      path: 'achieved',
+      name: 'Achieved',
+      meta: {
+        title: t('routes.demo.income.achieved'),
+      },
+      component: () => import('@/views/demo/income/total/index.vue'),
+    },
   ],
 };
 
