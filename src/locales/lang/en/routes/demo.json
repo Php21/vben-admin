@@ -1,4 +1,11 @@
 {
+  "income": {
+    "income": "Income Management",
+    "import": "Data Import",
+    "total": "Total",
+    "external": "External",
+    "achieved": "Achieved"
+  },
   "charts": {
     "baiduMap": "Baidu map",
     "aMap": "A map",
