@@ -12,7 +12,7 @@
       </select></span>
   </div>
   <div class="p-4">
-    <GrowCard :loading="loading" class="enter-y" />
+    <GrowCard :loading="loading" class="enter-y" id="card" />
     <SiteAnalysis class="!my-4 enter-y" :loading="loading" id="site"/>
     <div class="md:flex enter-y">
       <VisitRadar class="md:w-1/3 w-full" :loading="loading" />
@@ -28,25 +28,25 @@
       <thead>
         <tr>
           <th>排名</th>
-          <th>单位</th>
+          <th>管理维度</th>
           <th>收入</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>1</td>
-          <td>院本部</td>
-          <td>18925750</td>
+          <td>招标代理</td>
+          <td>17878078.37</td>
         </tr>
         <tr>
           <td>2</td>
-          <td>院本部</td>
-          <td>16193626.8</td>
+          <td>DICT方案</td>
+          <td>13150424.54</td>
         </tr>
         <tr>
           <td>3</td>
-          <td>华南大区</td>
-          <td>14287075.47</td>
+          <td>DICT特专交付</td>
+          <td>6619070.12</td>
         </tr>
       </tbody>
     </table>
@@ -164,8 +164,8 @@
   }, 1500);
 </script>
 <style>
-#site{
-  margin-top: 150px;
+#card{
+  width: 800px;
 }
 .select{
   width: 100%;
@@ -181,41 +181,41 @@
 }
 
 .data-table1{
-  width: 205px;
+  width: 250px;
   height: 175px;
   border-width: 1px;
   border-color: black;
   border-radius: 3%;
   margin-top: -620px;
-  margin-left: 350px
+  margin-left: 250px
 }
 .data-table2{
   border-color: black;
-  width: 205px;
+  width: 250px;
   height: 175px;
   border-width: 1px;
   border-radius: 3%;
   border-width: 1px;
   margin-top: -175px;
-  margin-left: 580px
+  margin-left: 500px
 }
 .data-table3{
   border-color: black;
-  width: 215px;
+  width: 250px;
   border-width: 1px;
   border-radius: 3%;
   border-width: 1px;
   margin-top: -175px;
-  margin-left: 820px
+  margin-left: 750px
 }
 .data-table4{
   border-color: black;
-  width: 215px;
+  width: 250px;
   border-width: 1px;
   border-radius: 3%;
   border-width: 1px;
   margin-top: -175px;
-  margin-left: 1080px
+  margin-left: 1000px
 }
 .table1{
   border-width: 1px;
