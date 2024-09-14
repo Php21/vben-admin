@@ -1,15 +1,8 @@
 <template >
   <div class="select">
-    <span class="p">年份
-    <select placeholder="选择年份" class="choice">
-      <option>2023年</option>
-      <option>2024年</option>
-    </select></span>
-    <span class="p">对标单位
-      <select placeholder="选择单位" class="choice">
-        <option>一级单位</option>
-        <option>二级单位</option>
-      </select></span>
+    <div class="pt-5 bg-white rounded-lg">
+      <BasicForm :labelWidth="80" :actionColOptions="{ span: 4 }" :schemas="schemas" />
+    </div>
   </div>
   <div class="ant-progress-outer">
     <div><h1>分院收入完成进度</h1></div>
@@ -70,7 +63,67 @@
 
 
 <script lang="ts" setup>
+import { BasicForm, FormSchema } from '@/components/Form';
 const percentage = ref(0);
+
+
+const schemas: FormSchema[] = [
+  {
+    field: 'year',
+    component: 'DatePicker',
+    label: '年份',
+    colProps: {
+      span: 4,
+    },
+  },
+  {
+    field: 'department',
+    component: 'Select',
+    label: '部门',
+    colProps: {
+      span: 6,
+    },
+    componentProps: {
+      options: [
+        {
+          label: '湖南分院',
+          value: '1',
+          key: '1',
+        },
+        {
+          label: '网研中心',
+          value: '2',
+          key: '2',
+        },
+      ],
+    },
+  },
+  {
+    field: 'type',
+    component: 'Select',
+    label: '业务主类',
+    colProps: {
+      span: 6,
+    },
+    componentProps: {
+      options: [
+        {
+          label: '网优',
+          value: '1',
+          key: '1',
+        },
+        {
+          label: 'DICT',
+          value: '2',
+          key: '2',
+        },
+      ],
+    },
+  },
+];
+
+
+
 const updateProgress = async () => {
   for (let i = 0; i <= 100; i++) {
     percentage.value = 50;
@@ -184,7 +237,7 @@ const echartsTree = ref(null);
 onMounted(() => {
   const initTreeChart = () => {
     const myChart = echarts.init(echartsTree.value);
-
+    //初始赋值，或者是在json文件中给值
     const option = {
       tooltip: {
         trigger: 'item',
@@ -251,7 +304,6 @@ onMounted(() => {
 
 <style scoped>
 .echartstree{
-  background-color: aqua;
   width: 980px;
   height: 600px;
   margin-top: -600px;

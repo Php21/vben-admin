@@ -1,15 +1,8 @@
 <template>
-  <div class="select">
-    <span class="p">年份
-    <select placeholder="选择年份" class="choice">
-      <option>2023年</option>
-      <option>2024年</option>
-    </select></span>
-    <span class="p">对标单位
-      <select placeholder="选择单位" class="choice">
-        <option>一级单位</option>
-        <option>二级单位</option>
-      </select></span>
+  <div >
+    <div class="pt-5 bg-white rounded-lg">
+      <BasicForm :labelWidth="80" :actionColOptions="{ span: 4 }" :schemas="schemas" />
+    </div>
   </div>
   <div class="p-4">
     <GrowCard :loading="loading" class="enter-y" id="card" />
@@ -51,7 +44,7 @@
       </tbody>
     </table>
   </div>
-  <div class="data-table2">
+  <div class="data-table2" >
     <!-- 表格标题 -->
     <h2>ef产品收入TOP3单位</h2>
     <!-- 表格区域 -->
@@ -148,8 +141,9 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import GrowCard from './components/GrowCard.vue';
-  import BasicForm from './components/GrowCard.vue'
+  //import BasicForm from './components/GrowCard.vue'
   import SiteAnalysis from './components/SiteAnalysis.vue';
+  import { BasicForm, FormSchema } from '@/components/Form';
   import BasicTable from '@/components/Table/src/BasicTable.vue';
    //引入 表格内容和头部查询框
   //import VisitSource from './components/VisitSource.vue';
@@ -158,6 +152,61 @@
   
 
   const loading = ref(true);
+
+  const schemas: FormSchema[] = [
+  {
+    field: 'year',
+    component: 'DatePicker',
+    label: '年份',
+    colProps: {
+      span: 4,
+    },
+  },
+  {
+    field: 'department',
+    component: 'Select',
+    label: '部门',
+    colProps: {
+      span: 6,
+    },
+    componentProps: {
+      options: [
+        {
+          label: '湖南分院',
+          value: '1',
+          key: '1',
+        },
+        {
+          label: '网研中心',
+          value: '2',
+          key: '2',
+        },
+      ],
+    },
+  },
+  {
+    field: 'type',
+    component: 'Select',
+    label: '业务主类',
+    colProps: {
+      span: 6,
+    },
+    componentProps: {
+      options: [
+        {
+          label: '网优',
+          value: '1',
+          key: '1',
+        },
+        {
+          label: 'DICT',
+          value: '2',
+          key: '2',
+        },
+      ],
+    },
+  },
+];
 
   setTimeout(() => {
     loading.value = false;
