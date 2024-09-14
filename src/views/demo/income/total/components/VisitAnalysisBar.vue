@@ -2,17 +2,22 @@
   <div ref="chartRef" :style="{ height, width }"></div>
 </template>
 <script lang="ts" setup>
-  import { onMounted, ref, Ref } from 'vue';
-  import { useECharts } from '@/hooks/web/useECharts';
-  import { basicProps } from './props';
+import { ref, Ref, watch } from 'vue';
+import { useECharts } from '@/hooks/web/useECharts';
+import { basicProps } from './props';
 
-  defineProps({
-    ...basicProps,
-  });
+const props = defineProps({
+  ...basicProps,
+  departmentList: { type: Array<string>, default: [] },
+  incomeList: { type: Array<number>, default: [] }
+});
 
-  const chartRef = ref<HTMLDivElement | null>(null);
-  const { setOptions } = useECharts(chartRef as Ref<HTMLDivElement>);
-  onMounted(() => {
+const chartRef = ref<HTMLDivElement | null>(null);
+const { setOptions } = useECharts(chartRef as Ref<HTMLDivElement>);
+
+watch(
+  () => [props.departmentList, props.incomeList],
+  () => {
     setOptions({
       tooltip: {
         trigger: 'axis',
@@ -26,20 +31,28 @@
       grid: { left: '1%', right: '1%', top: '2  %', bottom: 0, containLabel: true },
       xAxis: {
         type: 'category',
-        data: [...new Array(12)].map((_item, index) => `${index + 1}月`),
+        data: props.departmentList,
+        axisLabel: {
+          show: true,
+          interval: 0,
+          rotate: 45,
+          fontSize: 12,
+        },
       },
       yAxis: {
         type: 'value',
-        max: 8000,
-        splitNumber: 4,
+        // max: 8000,
+        // splitNumber: 4,
       },
       series: [
         {
-          data: [3000, 2000, 3333, 5000, 3200, 4200, 3200, 2100, 3000, 5100, 6000, 3200, 4800],
+          data: props.incomeList,
           type: 'bar',
-          barMaxWidth: 80,
+          barMaxWidth: 40,
         },
       ],
     });
-  });
+  },
+  { immediate: true },
+);
 </script>
