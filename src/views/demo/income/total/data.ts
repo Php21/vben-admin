@@ -38,7 +38,7 @@ export const growCardList: GrowCardItem[] = [
     title: '七大重点产品收入',
     icon: 'transtotalIncome|svg',
     selfIncome: 8871.31,
-    target: 14768.00,
+    target: 50000,
     color: 'purple',
     totalIncome: 266815.74,
   },
